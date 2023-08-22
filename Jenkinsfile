@@ -30,7 +30,8 @@ pipeline{
                 echo "Invoking your AWS Lambda"
               // sh "aws lambda invoke --function-name my-lambda-function out --log-type Tail"
               // sh "aws lambda invoke --function-name my-lambda-function --invocation-type Event --cli-binary-format raw-in-base64-out response.js"
-              sh "aws lambda invoke --function-name my-lambda-function out --log-type Tail raw-in-base64-out"
+              //sh "aws lambda invoke --function-name my-lambda-function out --log-type Tail "
+              sh "aws lambda invoke --cli-binary-format raw-in-base64-out --function-name my-lambda-function --invocation-type Event response.json"
             }
         }
     }
