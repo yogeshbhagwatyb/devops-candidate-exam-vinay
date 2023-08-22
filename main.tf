@@ -33,7 +33,7 @@ resource "aws_lambda_function" "my_lambda_function" {
   function_name = "my-lambda-function"
   handler = "index.handler"
   runtime = "python3.8"
-  role = "DevOps-Candidate-Lambda-Role"
+  role = data.aws_iam_role.lambda.arn
   # replace with your lambda function code
   filename = "api.zip"
 

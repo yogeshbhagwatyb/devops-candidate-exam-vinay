@@ -6,6 +6,6 @@
 #  id = "vpc-00bf0d10a6a41600c"
 #}
 
-#data "aws_iam_role" "lambda" {
-#  name = "DevOps-Candidate-Lambda-Role"
-#}
+data "aws_iam_role" "lambda" {
+  name = "DevOps-Candidate-Lambda-Role"
+}
