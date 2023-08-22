@@ -14,6 +14,7 @@ pipeline{
         }
         stage("TF Plan"){
             steps{
+
                 echo "Executing Terraform Plan"
                 sh 'terraform plan'
             }
@@ -27,7 +28,7 @@ pipeline{
         stage("Invoke Lambda"){
             steps{
                 echo "Invoking your AWS Lambda"
-               sh "aws lambda invoke --function-name my-lambda-function --cli-binary-format raw-in-base64-out  out.txt"
+               sh "aws lambda invoke --function-name my-lambda-function out --log-type Tail"
             }
         }
     }
