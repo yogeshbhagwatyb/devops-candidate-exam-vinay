@@ -49,6 +49,7 @@ resource "aws_lambda_function" "my_lambda_function" {
 resource "aws_security_group" "my_security_group" {
   name_prefix = "my-security-group"
   description = "Security group for my Lambda function"
+  vpc_id      = "vpc-00bf0d10a6a41600c"
 
   #ingress {
   #  from_port   = 443
