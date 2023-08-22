@@ -3,7 +3,7 @@ import requests
 
 def lambda_handler(event, context):
     url = "https://ij92qpvpma.execute-api.eu-west-1.amazonaws.com/candidate-email_serverless_lambda_stage/data"
-    headers = {"content-Type":"application/json", "X-Siemens-Auth": "test"}
+    headers = {"Content-Type":"application/json", "Accept: application/json","X-Siemens-Auth": "test"}
     payload = {
     "subnet_id": "subnet-0531d09d8f4122ce7",
     "name": "vinay patange",
