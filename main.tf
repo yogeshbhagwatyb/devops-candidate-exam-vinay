@@ -13,13 +13,13 @@ resource "aws_subnet" "private_subnet" {
 
 # Create routing table
 resource "aws_route_table" "private_route_table" {
-  vpc_id = vpc-00bf0d10a6a41600c
+  vpc_id = "vpc-00bf0d10a6a41600c"
 
   route {
     cidr_block = "0.0.0.0/0"
     # Replace with the ID of the NAT Gateway that you want to use
     # to allow traffic to reach the internet
-    nat_gateway_id = nat-0d688bbff8a47b274
+    nat_gateway_id = "nat-0d688bbff8a47b274"
   }
 
   tags = {
@@ -32,7 +32,7 @@ resource "aws_lambda_function" "my_lambda_function" {
   function_name = "my-lambda-function"
   handler = "index.handler"
   runtime = "python3.8"
-  role = DevOps-Candidate-Lambda-Role
+  role = "DevOps-Candidate-Lambda-Role"
   # replace with your lambda function code
   filename = "api.zip"
 
