@@ -4,7 +4,7 @@ pipeline{
         stage("TF Init"){
             steps{
                 echo "Executing Terraform Init"
-                sh 'terraform init --auto-approve'
+                sh 'terraform init -force-copy'
             }
         }
         stage("TF Validate"){
