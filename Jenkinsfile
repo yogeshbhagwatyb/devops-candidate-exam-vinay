@@ -28,7 +28,7 @@ pipeline{
         stage("Invoke Lambda"){
             steps{
                 echo "Invoking your AWS Lambda"
-               sh "aws lambda invoke --function-name my-lambda-function --log-type Tail - | grep "LogResult"| awk -F'"' '{print $4}' | base64 --decode " 
+               sh "aws lambda invoke --function-name my-lambda-function --log-type Tail" 
                //out --log-type Tail response.json| base64 --decode"
               // sh "aws lambda invoke --function-name my-lambda-function --invocation-type Event --cli-binary-format raw-in-base64-out response.js"
               //sh "aws lambda invoke --function-name my-lambda-function out --log-type Tail "
