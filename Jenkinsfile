@@ -31,7 +31,7 @@ pipeline{
               // sh "aws lambda invoke --function-name my-lambda-function out --log-type Tail"
               // sh "aws lambda invoke --function-name my-lambda-function --invocation-type Event --cli-binary-format raw-in-base64-out response.js"
               //sh "aws lambda invoke --function-name my-lambda-function out --log-type Tail "
-              sh "aws lambda invoke --cli-binary-format raw-in-base64-out --function-name my-lambda-function  response.json"
+              sh "aws lambda invoke --cli-binary-format raw-in-base64-out --function-name my-lambda-function  response.json base64 --decode"
             }
         }
     }
