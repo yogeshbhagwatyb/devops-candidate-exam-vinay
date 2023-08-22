@@ -21,13 +21,13 @@ pipeline{
         stage("TF Apply"){
             steps{
                 echo "Executing Terraform Apply"
-                //sh "terraform apply --auto-approve"
+                sh "terraform apply --auto-approve"
             }
         }
         stage("Invoke Lambda"){
             steps{
                 echo "Invoking your AWS Lambda"
-                //sh "aws lambda invoke --function-name my-lambda-function --cli-binary-format raw-in-base64-out --payload '{}' out.txt"
+                sh "aws lambda invoke --function-name my-lambda-function --cli-binary-format raw-in-base64-out --payload '{}' out.txt"
             }
         }
     }
