@@ -13,5 +13,4 @@ def lambda_handler(event, context):
     return {
         "statusCode": response.status_code,
         "body": response.json()
-        "payload": payload
     }
