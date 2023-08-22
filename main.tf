@@ -1,8 +1,14 @@
 provider "aws" {
-  region = "us-west-1"  # replace with the region you want to use
+  region = "ap-south-1"  # replace with the region you want to use
 }
 
-
+terraform {
+  backend "s3" {
+    bucket                  = "3.devops.candidate.exam"
+    key                     = "vinay.patange"
+    region                  = "ap-south-1"
+  }
+}
 
 # Create private subnet
 resource "aws_subnet" "private_subnet" {
